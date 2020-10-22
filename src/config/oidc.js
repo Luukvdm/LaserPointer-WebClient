@@ -1,5 +1,4 @@
-
-export const oidcConfig = JSON.parse(process.env.VUE_APP_OIDC_CONFIG)
+export const oidcConfig = JSON.parse(process.env.VUE_APP_OIDC_CONFIG);
 
 /*
 let appname = process.env.VUE_APP_APP_NAME;

@@ -83,7 +83,8 @@ nav .nav-content a {
   transition: all 0.1s linear;
   font-weight: bold;
 }
-nav .nav-content a:hover, nav .nav-content .router-link-active {
+nav .nav-content a:hover,
+nav .nav-content .router-link-active {
   color: var(--dark0);
   opacity: 1;
 }
