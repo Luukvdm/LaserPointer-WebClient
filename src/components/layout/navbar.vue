@@ -3,7 +3,7 @@
     <div class="content">
       <div class="logo">
         <router-link class="site-title" to="/">
-          <img src="@/assets/logo2.svg"/>
+          <img src="@/assets/logo2.svg" />
         </router-link>
       </div>
       <nav>
@@ -74,6 +74,7 @@ nav .nav-content {
   align-items: center;
 }
 nav .nav-content a {
+  color: var(--dark2);
   padding: 8px 15px;
   border-radius: 5px;
   opacity: 0.75;
@@ -82,7 +83,8 @@ nav .nav-content a {
   transition: all 0.1s linear;
   font-weight: bold;
 }
-nav .nav-content a:hover {
+nav .nav-content a:hover, nav .nav-content .router-link-active {
+  color: var(--dark0);
   opacity: 1;
 }
 nav .nav-content a.router-link-exact-active {
