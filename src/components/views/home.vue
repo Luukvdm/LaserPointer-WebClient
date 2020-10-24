@@ -7,11 +7,17 @@
       <p>
         Welkom bij LaserPointer!
       </p>
+      <jobStatus />
     </div>
   </div>
 </template>
 <script>
+import jobStatus from "@/components/ui/jobStatus";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    jobStatus
+  }
 };
 </script>
