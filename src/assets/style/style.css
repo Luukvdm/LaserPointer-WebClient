@@ -108,13 +108,17 @@ a:hover {
 }
   
   button {
-    color: var(--secondary-color);
-    background-color: var(--grey-color);
+    color: var(--dark2);
+    background-color: var(--main-color);
     border-radius: 5px;
     border: none;
     padding: 10px;
     margin: -4px 0;
   }
+
+	button:hover {
+		color: var(--dark0);
+	}
   
   button.fullwidth {
     width: 100%;
