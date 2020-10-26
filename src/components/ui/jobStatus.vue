@@ -32,18 +32,16 @@ export default {
   },
   methods: {
     setupStream() {
-      let es = new EventSource(
-        `${config.apiBaseUrl}/jobEvents/activestream`
-      );
+      let es = new EventSource(`${config.apiBaseUrl}/jobEvents/activestream`);
 
       es.addEventListener(
         "statusChange",
         event => {
           let data = JSON.parse(event.data);
-          
+
           data.forEach(newJob => {
             let toReplace = this.jobs.find(oldJob => oldJob.id == newJob.jobId);
-            if(toReplace) {
+            if (toReplace) {
               toReplace.id = newJob.jobId;
               toReplace.status = newJob.newStatus;
             }

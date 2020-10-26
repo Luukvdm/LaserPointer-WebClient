@@ -11,7 +11,6 @@
     <div class="content-block-wrapper">
       <div class="content-center content">
         <div class="content">
-
           <div class="fieldset">
             <div class="fieldset-content">
               <div class="fieldset-label">
@@ -20,7 +19,9 @@
               <div class="fieldset-field">
                 <select v-model="selectedHashType">
                   <template v-for="(type, key) in hashTypes" v-bind:key="key">
-                    <option :selected="key == 0" v-bind:value="type">{{ type }}</option>
+                    <option :selected="key == 0" v-bind:value="type">{{
+                      type
+                    }}</option>
                   </template>
                 </select>
               </div>
@@ -34,9 +35,16 @@
               </div>
               <div class="fieldset-field">
                 <template v-for="(hash, key) in hashes" v-bind:key="key">
-                  <input v-model.trim="hash.value" @change.once="addHash()" placeholder="Hash in hex format"/>
-                  <span v-if="hash.value.length != hashLength">Not a valid hash!</span>
-                  <br/><br/> <!-- TODO Fix this with css instead -->
+                  <input
+                    v-model.trim="hash.value"
+                    @change.once="addHash()"
+                    placeholder="Hash in hex format"
+                  />
+                  <span v-if="hash.value.length != hashLength"
+                    >Not a valid hash!</span
+                  >
+                  <br /><br />
+                  <!-- TODO Fix this with css instead -->
                 </template>
               </div>
             </div>
@@ -49,11 +57,9 @@
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -65,7 +71,7 @@ export default {
     return {
       hashTypes: [],
       selectedHashType: "",
-        // TODO length shouldnt be hard coded, replace with value from api
+      // TODO length shouldnt be hard coded, replace with value from api
       hashLength: 64,
       hashes: []
     };
@@ -83,12 +89,12 @@ export default {
       });
     },
     send() {
-      let stringHashes = []
+      let stringHashes = [];
       this.hashes.forEach(h => {
-        if(h.value.length != this.hashLength) return;
-        stringHashes.push(h.value)
+        if (h.value.length != this.hashLength) return;
+        stringHashes.push(h.value);
       });
-      if(stringHashes.length > 0) {
+      if (stringHashes.length > 0) {
         let job = {
           HashType: this.selectedHashType,
           HexHashes: stringHashes
@@ -122,4 +128,3 @@ export default {
   width: 30%;
 }
 </style>
-
