@@ -25,6 +25,15 @@ const routes = [
         }
       },
       {
+        path: "about",
+        alias: "",
+        name: "About",
+        component: Home,
+        meta: {
+          isPublic: true
+        }
+      },
+      {
         path: "account",
         name: "My Account",
         component: myAccount,
