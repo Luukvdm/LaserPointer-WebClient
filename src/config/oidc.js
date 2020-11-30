@@ -1,4 +1,19 @@
-export const oidcConfig = JSON.parse(process.env.VUE_APP_OIDC_CONFIG);
+// export const oidcConfig = JSON.parse(process.env.VUE_APP_OIDC_CONFIG);
+let baseUrl = process.env.VUE_APP_BASE_IDENTITY_SERVER_URL;
+let appName = process.env.VUE_APP_APP_NAME;
+
+export const oidcConfig = {
+  authority: "https://" + baseUrl + "/",
+  clientId: appName,
+  redirectUri: "https://" + baseUrl + "/#/oidc/callback",
+  popupRedirectUri: "https://" + baseUrl + "/#/oidc/popup-callback",
+  responseType: "code",
+  scope: "openid profile",
+  automaticSilentRenew: true,
+  automaticSilentSignin: false,
+  silentRedirectUri: "https://" + baseUrl + "/#/oidc/silent-renew.html"
+}
+
 
 /*
 let appname = process.env.VUE_APP_APP_NAME;
