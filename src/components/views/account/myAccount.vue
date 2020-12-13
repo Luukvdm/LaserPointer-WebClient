@@ -3,7 +3,7 @@
     <div class="page-main-section">
       <div class="content">
         <div class="textblock">
-          <h2>{{ oidcUser.preferred_username }}</h2>
+          <h1>{{ oidcUser.preferred_username }}</h1>
           <p>
             You are logged in as {{ oidcUser.name }}. Your session started at
             {{ uDateToString(oidcUser.auth_time * 1000) }} and will end at
@@ -30,14 +30,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "account",
   computed: {
-    ...mapGetters("oidcStore", [
-      "oidcIsAuthenticated",
-      "oidcAuthenticationIsChecked",
-      "oidcUser",
-      "oidcIdToken",
-      "oidcIdTokenExp",
-      "access_token"
-    ])
+    ...mapGetters("oidcStore", ["oidcUser", "oidcIdTokenExp"])
   },
   methods: {
     ...mapActions("oidcStore", ["signOutOidc", "authenticateOidc"]),
@@ -80,10 +73,6 @@ export default {
   text-align: left;
   margin: auto;
   max-width: 500px;
-}
-
-ul {
-  list-style-type: none;
 }
 
 .caret {

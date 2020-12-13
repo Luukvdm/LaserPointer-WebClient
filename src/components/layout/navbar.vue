@@ -31,14 +31,21 @@
         </div>
       </nav>
     </div>
+    <div class="job-status">
+      <jobStatus />
+    </div>
   </header>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import jobStatus from "@/components/ui/jobStatus";
 
 export default {
   name: "NavBar",
+  components: {
+    jobStatus
+  },
   computed: {
     ...mapGetters("oidcStore", [
       "oidcIsAuthenticated",
@@ -115,5 +122,12 @@ nav .nav-content a.router-link-exact-active {
 }
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.job-status {
+  color: var(--dark0);
+  position: absolute;
+  right: 30px;
+  top: 20px;
 }
 </style>
