@@ -1,8 +1,7 @@
 <template>
   <div class="jobstatus">
     <template v-for="status in states" v-bind:key="status">
-      <b>{{ status }}</b>
-      <span>{{ getByStatus(status).length }}</span>
+      <b>{{ status }}:</b> <span>{{ getByStatus(status).length }}</span>
       <br />
     </template>
   </div>
@@ -22,7 +21,7 @@ export default {
   mounted() {
     axios
       .get(`${config.apiBaseUrl}/jobEvents/active`)
-      .then(response => (this.jobs = response.data.jobs));
+      .then(response => (this.jobs = response.data));
     axios
       .get(`${config.apiBaseUrl}/jobs/states`)
       .then(response => (this.states = response.data));
@@ -38,7 +37,6 @@ export default {
         "statusChange",
         event => {
           let data = JSON.parse(event.data);
-
           data.forEach(newJob => {
             let toReplace = this.jobs.find(oldJob => oldJob.id == newJob.jobId);
             if (toReplace) {

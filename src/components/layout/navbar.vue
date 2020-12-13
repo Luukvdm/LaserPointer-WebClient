@@ -14,6 +14,9 @@
             <div class="dropdown">
               <a>Jobs</a>
               <div class="dropdown-content">
+                <router-link id="nav-my-jobs" class="dropdown-link" to="/job/my"
+                  >My</router-link
+                >
                 <router-link
                   id="nav-createjob"
                   class="dropdown-link"
@@ -51,7 +54,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 header .content {
   display: flex;
   flex-flow: row;

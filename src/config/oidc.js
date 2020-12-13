@@ -13,8 +13,7 @@ export const oidcConfig = {
   automaticSilentRenew: true,
   automaticSilentSignin: false,
   silentRedirectUri: baseUrl + "/#/oidc/silent-renew.html"
-}
-
+};
 
 /*
 let appname = process.env.VUE_APP_APP_NAME;

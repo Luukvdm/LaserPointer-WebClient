@@ -113,7 +113,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .fieldset > .fieldset-content {
   display: flex;
   height: 100%;
