@@ -5,6 +5,8 @@ import Home from "@/components/views/home.vue";
 import myAccount from "@/components/views/account/myAccount.vue";
 
 import createJob from "@/components/views/job/create.vue";
+import myJobs from "@/components/views/job/my.vue";
+import jobDetails from "@/components/views/job/details.vue";
 
 import OidcCallback from "@/components/views/oidc/oidcCallback.vue";
 import OidcPopupCallback from "@/components/views/oidc/oidcPopupCallback.vue";
@@ -51,6 +53,22 @@ const routes = [
         path: "create",
         name: "CreateJob",
         component: createJob,
+        meta: {
+          isPublic: false
+        }
+      },
+      {
+        path: "my",
+        name: "MyJobs",
+        component: myJobs,
+        meta: {
+          isPublic: false
+        }
+      },
+      {
+        path: "details/:id",
+        name: "JobDetails",
+        component: jobDetails,
         meta: {
           isPublic: false
         }
